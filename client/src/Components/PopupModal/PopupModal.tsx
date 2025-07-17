@@ -22,8 +22,8 @@ const PopupModal: React.FC<{ close: () => void; lead?: Lead }> = ({ close, lead 
     if (form.notes.split(' ').length > 50) return alert('Max 50 words allowed!');
     const method = lead ? 'PUT' : 'POST';
     const url = lead
-      ? `http://localhost:3001/api/leads/update-lead/${lead._id}`
-      : 'http://localhost:3001/api/leads/create-lead';
+      ? `https://crmdatabaseserver.onrender.com/api/leads/update-lead/${lead._id}`
+      : 'https://crmdatabaseserver.onrender.com/api/leads/create-lead';
   
     await fetch(url, {
       method,
