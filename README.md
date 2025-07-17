@@ -2,7 +2,7 @@ OVERVIEW:
  CRM SaaS Dashboard
 
 
- A simple full stack TypeScript React + Node.js CRM app to manage sales leads.
+ A simple full stack TypeScript React + Node.js expressjs, mongo db  CRM app to manage sales leads.
 
 ## Features
 - Add, edit, delete sales leads with details like name, email, phone, status, and notes.
