@@ -11,7 +11,7 @@ const AgentDashboard: React.FC = () => {
 
   useEffect(() => {
     const fetchAll = async () => {
-      const res = await fetch('http://localhost:3001/api/leads/retrieve/all');
+      const res = await fetch('https://crmdatabaseserver.onrender.com/api/leads/retrieve/all');
       const data = await res.json();
       setLeads(data);
     };
