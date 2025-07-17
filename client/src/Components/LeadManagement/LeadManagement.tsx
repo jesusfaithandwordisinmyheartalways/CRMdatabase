@@ -14,7 +14,7 @@ const LeadManagement: React.FC = () => {
 
   const fetchLeads = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/leads/retrieve/all');
+      const res = await fetch('https://crmdatabaseserver.onrender.com/api/leads/retrieve/all');
       const data = await res.json();
       setLeads(data);
       // Save to localStorage in case you want to persist
@@ -40,7 +40,7 @@ const LeadManagement: React.FC = () => {
 
   const deleteLead = async (id: string) => {
     try {
-      await fetch(`http://localhost:3001/api/leads/delete-lead/${id}`, { method: 'DELETE' });
+      await fetch(`https://crmdatabaseserver.onrender.com/api/leads/delete-lead/${id}`, { method: 'DELETE' });
       fetchLeads();
       socket.emit('updateNotes'); // emit event so other clients update
     } catch (err) {
@@ -84,7 +84,7 @@ const LeadManagement: React.FC = () => {
           <textarea
             value={lead.notes}
             onChange={async (e) => {
-              await fetch(`http://localhost:3001/api/leads/update-lead/${lead._id}`, {
+              await fetch(`https://crmdatabaseserver.onrender.com/api/leads/update-lead/${lead._id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ notes: e.target.value }),
